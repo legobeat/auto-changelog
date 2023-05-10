@@ -288,7 +288,7 @@ export async function updateChangelog({
  * @returns An array of the non-empty lines returned by the command.
  */
 async function runCommand(command: string, args: string[]): Promise<string[]> {
-  return ((await execa(command, [...args])).stdout as string)
+  return (await execa(command, [...args])).stdout
     .trim()
     .split('\n')
     .filter((line) => line !== '');
